@@ -1,0 +1,18 @@
+name: fluxcloud
+port: 80
+targetPort: 3031
+replicas: 1
+
+image: justinbarrick/fluxcloud:v0.2.11
+
+slack:
+  # Set webhook url securely via `--set slack.url="https://hooks.slack.com/services/WEBHOOK_URL"`
+  url: "https://hooks.slack.com/services/WEBHOOK_URL"
+  # Or configure multiple channels, comma separated <channel>=<namespace>. E.g. "#kubernetes=*,#team=team"
+  channel: "#flux-notifications"
+  username: "fluxcloud"
+  iconEmoji: ":flux:"
+
+git:
+  # URL of repo flux monitors
+  url: "https://github.com/justinbarrick/fluxcloud/"

@@ -1,0 +1,43 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: {{ .Values.name | quote | default "fluxcloud" }}
+spec:
+  selector:
+    name: {{ .Values.name | quote | default "fluxcloud" }}
+  ports:
+  - protocol: TCP
+    port: {{ .Values.port | default 80 }}
+    targetPort: {{ .Values.targetPort | default 3031 }}
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ .Values.name | quote | default "fluxcloud" }}
+spec:
+  replicas: {{ .Values.replicas | default 1 }}
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        name: {{ .Values.name | quote | default "fluxcloud" }}
+    spec:
+      containers:
+      - name: {{ .Values.name | quote | default "fluxcloud" }}
+        image: {{ .Values.image | quote | default "justinbarrick/fluxcloud:v0.2.11" }}
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: {{ .Values.targetPort | default 3031 }}
+        env:
+        - name: SLACK_URL
+          value: {{ .Values.slack.url | quote }}
+        - name: SLACK_CHANNEL
+          value: {{ .Values.slack.channel | quote | default "#flux-notifications"}}
+        - name: SLACK_USERNAME
+          value: {{ .Values.slack.username | quote | default "fluxcloud" }}
+        - name: SLACK_ICON_EMOJI
+          value: {{ .Values.slack.iconEmoji | quote | default ":flux:" }}
+        - name: GITHUB_URL
+          value: {{ .Values.git.url | quote }}

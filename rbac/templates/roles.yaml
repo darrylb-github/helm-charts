@@ -1,0 +1,21 @@
+{{- range .Values.roles }}
+kind: {{ .roleKind | default "Role" | quote }}
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: {{ $.Release.Namespace | quote }}
+  name: {{ .name | quote }}
+rules:
+- apiGroups:
+  {{- range .apiGroups }}
+  - {{ . | quote }}
+  {{- end }}
+  resources:
+  {{- range .resources }}
+  - {{ . | quote }}
+  {{- end }}
+  verbs:
+  {{- range .verbs }}
+  - {{ . | quote }}
+  {{- end }}
+---
+{{- end }}
