@@ -1,3 +1,24 @@
 apiVersion: v1
-entries: {}
-generated: 2018-12-19T12:37:27.575684296Z
+entries:
+  fluxcloud:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-12-19T13:52:36.361005338Z
+    description: A Helm chart to setup fluxcloud for sending Flux events to Slack.
+      Uses standalone deployment instead of sidecar.
+    digest: 133e4ba493f6299d2ccb542f49f66870dbebd1e3319f626c5dbc5a926122ac39
+    name: fluxcloud
+    urls:
+    - fluxcloud-0.1.0.tgz
+    version: 0.1.0
+  rbac:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-12-19T13:52:36.361200463Z
+    description: A chart to configure cluster RBAC permissions.
+    digest: 840a0178f01b75cc54c0dcea77522c086607f9faff05cac29c2b50105d83ac10
+    name: rbac
+    urls:
+    - rbac-0.1.0.tgz
+    version: 0.1.0
+generated: 2018-12-19T13:52:36.360566446Z
