@@ -1,11 +1,14 @@
 # Bind groups to roles. See https://kubernetes.io/docs/reference/access-authn-authz/rbac/#user-facing-roles for built in roles
 roleBindings: {}
 # roleBindings:
-#   - group: developers
+#   - name: developers-rb
+#     group: developers
 #     role: view
-#   - group: kube-power
+#   - name: kube-power-rb
+#     group: kube-power
 #     role: edit
-#   - group: custom-role
+#   - name: custom-role-rb
+#     group: custom-role
 #     role: my-super-role
 #     roleKind: Role
 
@@ -13,18 +16,15 @@ roleBindings: {}
 roles: {}
 # roles:
 #   - name: my-role
-#     apiGroups:
-#       - ""
-#     resources:
-#       - "pods"
-#     verbs:
-#       - "get"
-#       - "watch"
-#       - "list"
+#     rules:
+#       - apiGroups: [""]
+#         resources: ["pods"]
+#         verbs: ["get", "watch", "list"]
+#       - apiGroups: [""]
+#         resources: ["services"]
+#         verbs: ["get", "watch", "list"]
 #   - name: my-super-role
-#     apiGroups:
-#       - ""
-#     resources:
-#       - "*"
-#     verbs:
-#       - "*"
+#     rules:
+#       - apiGroups: [""]
+#         resources: ["*"]
+#         verbs: ["*"]
