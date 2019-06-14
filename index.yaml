@@ -3,7 +3,7 @@ entries:
   common:
   - apiVersion: v1
     appVersion: 0.0.5
-    created: 2019-06-14T15:37:57.181683+01:00
+    created: 2019-06-14T15:39:51.915841+01:00
     description: Common chartbuilding components and helpers
     digest: 6bed63434c6d23bc6e3226f9181480b65e6f079d04ca3f9b82c3a2934cd0d7a8
     home: https://helm.sh
@@ -19,7 +19,7 @@ entries:
   flux-helm-release:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-06-14T15:37:57.181944+01:00
+    created: 2019-06-14T15:39:51.916156+01:00
     description: A Helm chart for Kubernetes
     digest: d3f9896c072d0a54f27dc5b0e83cdb2ce068f75ef530262522ad121e4f74a9b3
     name: flux-helm-release
@@ -29,7 +29,7 @@ entries:
   fluxcloud:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-06-14T15:37:57.182223+01:00
+    created: 2019-06-14T15:39:51.916341+01:00
     description: A Helm chart to setup fluxcloud for sending Flux events to Slack.
       Uses standalone deployment instead of sidecar.
     digest: 133e4ba493f6299d2ccb542f49f66870dbebd1e3319f626c5dbc5a926122ac39
@@ -39,9 +39,9 @@ entries:
     version: 0.1.0
   nodelocaldns:
   - appVersion: 1.15.0
-    created: 2019-06-14T15:37:57.184743+01:00
+    created: 2019-06-14T15:39:51.91807+01:00
     description: Nodelocal DNS Cache
-    digest: e56a4b804c168487c315fb95e8682a3611dbb14d3cd2519a159a850b5a02007a
+    digest: 35f407b8ca22697ffb1bf33a8e53301448eb10ff3ad87ed4485a5da40276dc3a
     home: https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/dns/nodelocaldns
     keywords:
     - node
@@ -57,7 +57,7 @@ entries:
     - nodelocaldns-0.1.6.tgz
     version: 0.1.6
   - appVersion: 1.15.0
-    created: 2019-06-14T15:37:57.183612+01:00
+    created: 2019-06-14T15:39:51.917159+01:00
     description: Nodelocal DNS Cache
     digest: 701b462b3757301189bd892e6d534d58f8281366c072c7d0a66f413973a8e45b
     home: https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/dns/nodelocaldns
@@ -77,11 +77,11 @@ entries:
   rbac:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2019-06-14T15:37:57.184957+01:00
+    created: 2019-06-14T15:39:51.918289+01:00
     description: A chart to configure cluster RBAC permissions.
     digest: 840a0178f01b75cc54c0dcea77522c086607f9faff05cac29c2b50105d83ac10
     name: rbac
     urls:
     - rbac-0.1.0.tgz
     version: 0.1.0
-generated: 2019-06-14T15:37:57.180914+01:00
+generated: 2019-06-14T15:39:51.914648+01:00

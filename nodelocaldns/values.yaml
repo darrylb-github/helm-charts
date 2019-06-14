@@ -162,7 +162,7 @@ configMaps:
             cache 30
             reload
             loop
-            bind 169.254.20.10
+            bind {{ .Values.localIp }}
             forward . {{ .Values.consulIp }}
             prometheus :9253
             }
