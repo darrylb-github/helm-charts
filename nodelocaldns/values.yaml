@@ -202,5 +202,5 @@ secrets: {}
   #           key: value
 
 ## Used to forward traffic for a particular domain to consul
-# consul.domain: mydomain.example.biz
-# consul.ip: 172.20.171.56
+# consulDomain: mydomain.example.biz
+# consulIp: 172.20.171.56
