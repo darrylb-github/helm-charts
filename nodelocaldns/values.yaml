@@ -156,6 +156,17 @@ configMaps:
             }
             prometheus :9253
             }
+        {{ if and (.Values.consulDomain) (.Values.consulIp) }}
+        {{ .Values.consulDomain }}:53 {
+            errors
+            cache 30
+            reload
+            loop
+            bind 169.254.20.10
+            forward . {{ .Values.consulIp }}
+            prometheus :9253
+            }
+        {{ end }}
     files: {}
   # default:
   #   enabled: false
@@ -189,3 +200,7 @@ secrets: {}
   #     "test.yaml":
   #         group:
   #           key: value
+
+## Used to forward traffic for a particular domain to consul
+# consul.domain: mydomain.example.biz
+# consul.ip: 172.20.171.56

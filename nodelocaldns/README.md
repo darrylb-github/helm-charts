@@ -57,6 +57,8 @@ The following table lists the configurable parameters of the node-init chart and
 | `useHostNetwork`  | If true, use the host's network. Must be enabled when e.g. the init script must be run before any network plugins are loaded, or e.g. it configures the host network interface. | `true`                                     |
 | `useHostPID`.     | If true, use the host's PID namespace. Must be enabled when the init script invokes operations on processes in the host space.  | `nil`                               |
 | `priorityClassName` | Which Priority Class to associate with the daemonset. Use `system-node-critical` if you want to be extra sure that the init script is run. | `nil`                  |
+| `consulDomain` | An optional consul domain to add to the Corefile for forwarding traffic to this domain to consul. | `nil`                  |
+| `consulIp` | If setting a consulDomain, set this to the IP of consul. | `nil`                  |
 
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
 
