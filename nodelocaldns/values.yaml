@@ -104,7 +104,7 @@ configMaps:
   node-local-dns:
     enabled: true
     labels:
-      addonmanager.kubernetes.io/mode: EnsureExistse
+      addonmanager.kubernetes.io/mode: EnsureExists
     mountPath: /etc/coredns
     templates:
       "Corefile": |-
