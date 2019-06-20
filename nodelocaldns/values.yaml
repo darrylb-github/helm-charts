@@ -163,9 +163,7 @@ configMaps:
             reload
             loop
             bind {{ .Values.localIp }}
-            forward . {{ .Values.consulIp }} {
-                    force_tcp
-            }
+            forward . {{ .Values.consulIp }}
             prometheus :9253
             }
         {{ end }}
